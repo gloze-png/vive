@@ -1,9 +1,10 @@
-"use client"
+"use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 import Authentication from "./Authentication";
 import { useAuthContext } from "../provider";
+import Link from "next/link";
 
 function Header() {
   const { user } = useAuthContext();
@@ -19,8 +20,10 @@ function Header() {
             <Button>Get Started</Button>
           </Authentication>
         ) : (
-          <div>
-            <Button>Dashboard</Button>
+          <div className="flex items-center gap-3">
+            <Link href={"/dashbord"}>
+              <Button>Dashboard</Button>
+            </Link>
             <Image
               src={user?.photoURL}
               alt="userImage"
