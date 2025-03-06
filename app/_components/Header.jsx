@@ -21,7 +21,7 @@ function Header() {
           </Authentication>
         ) : (
           <div className="flex items-center gap-3">
-            <Link href={"/dashbord"}>
+            <Link href={"/dashboard"}>
               <Button>Dashboard</Button>
             </Link>
             <Image

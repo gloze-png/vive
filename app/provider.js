@@ -12,7 +12,6 @@ function Provider({ children }) {
   const [user, setUser] = useState(null); // useState 
   const CreateUser = useMutation(api.users.CreateUser);
   //const createUser = useMutation();
-  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       console.log("User status changed:", user);
