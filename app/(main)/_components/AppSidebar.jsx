@@ -12,7 +12,7 @@ function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <div className="flex items-center gap-3 w-full justify-center">
+        <div className="flex items-center gap-3 w-full justify-center mt-5">
         <Image src={"/logo.svg"} 
         alt="logo" 
         width={"50"} 
