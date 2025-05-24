@@ -15,7 +15,7 @@ function Provider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       console.log("User status changed:", user);
-      setUser(user);
+      //setUser(user);
 
        const result = await CreateUser({
         name: user?.displayName, 
@@ -23,6 +23,7 @@ function Provider({ children }) {
         pictureURL:user?.photoURL
       });
       console.log(result);
+      setUser(result);
     });
     return () => unsubscribe(); // Cleanup listener on unmount
   }, []);

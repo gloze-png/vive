@@ -5,7 +5,7 @@ export const CreateNewUser = mutation({
   args: {
     name: v.string(),
     email: v.string(),
-    picturesURL: v.string(), 
+    pictureURL: v.string(), 
     },
   handler: async (ctx, args) => {
     // Check if the user already exists by email
@@ -16,13 +16,16 @@ export const CreateNewUser = mutation({
       if(!user[0]?.email)
       {
         // Create a new user
-        const result =await ctx.db.insert('users',{
-          name: args.name,
-          email: args.email,
-          picturesURL: args?.picturesURL,
-          credit:4
-        })
-        return result;
+        const userData={
+          name:args?.name,
+          email:args?.email,
+          pictureURL: args?.pictureURL,
+          credits:4
+        }
+        // we merge the user data with the default user data
+        const result = await ctx.db.insert('users', userData)
+        
+        return userData;
         }
         return user[0];
       }

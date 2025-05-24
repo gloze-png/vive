@@ -9,8 +9,9 @@ function AppHeader() {
   return (
     <div className='p-3 flex justify-between items-center' >
      <SidebarTrigger />
-     <Image src={user?.photoURL} alt='user'
+    {user?.pictureURL && <Image src={user?.pictureURL} alt='user'
      width={'40'} height={'40'} className='rounded-full' />
+  }
     </div>
   )
 }
